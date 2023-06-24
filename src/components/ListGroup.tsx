@@ -10,14 +10,21 @@ function ListGroup() {
     ] //test
 
     if (items.length === 0)
-        return 
+        return (
         <>
         <h1>List</h1>
         <p>No item found</p>
         </>
+        );
+
+       const getMessage = () => {
+        return items.length === 0 && <p>No item found</p>;;
+       } 
+        
     return (
     <Fragment>
         <h1>List</h1>   
+        {getMessage()}
         <ul className="list-group">
             {items.map(item => 
                 <li key={item}>{item}</li>)}
