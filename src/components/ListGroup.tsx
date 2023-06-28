@@ -27,7 +27,8 @@ function ListGroup() {
         {getMessage()}
         <ul className="list-group">
             {items.map(item => 
-                <li key={item}>{item}</li>)}
+                <li className="list-group-item" key={item} onClick={() => console.log('Clicked')}
+                >{item}</li>)}
         </ul>
     </Fragment>
     );
