@@ -1,14 +1,13 @@
 import { Fragment, useState } from "react";
 //import { MouseEvent } from "react";
 
-function ListGroup() {
+interface ListGroupProps {
+    items: string[];
+    heading: string;
+    onSelectItem: (item: string) => void;
+}
 
-    let items = [
-        'Cheese',
-        'Quasso',
-        'meat',
-        'ello'
-    ] 
+function ListGroup({items, heading, onSelectItem}: ListGroupProps) {
 
 
     //Hook function tells component that state can change
@@ -30,11 +29,12 @@ function ListGroup() {
         
     return (
     <Fragment>
-        <h1>List</h1>   
+        <h1>{heading}</h1>   
         {getMessage()}
         <ul className="list-group">
             {items.map((item, index) => 
-                <li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} key={item} onClick={() => { setSelectedIndex(index);}}
+                <li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} key={item} onClick={() => { setSelectedIndex(index);
+                onSelectItem(item);}}
                 >{item}</li>)}
         </ul>
     </Fragment>
