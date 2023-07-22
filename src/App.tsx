@@ -1,16 +1,11 @@
-import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
+
 function App() {
-  let items = [
-    'Cheese',
-    'Quasso',
-    'meat',
-    'ello'
-] 
 
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  }
-
-  return <div><ListGroup items={items} heading="List" onSelectItem={handleSelectItem}/></div>
+  return <div>
+    <Alert>
+      You have won an Iphone
+    </Alert>
+    </div>
 }
 export default App;
